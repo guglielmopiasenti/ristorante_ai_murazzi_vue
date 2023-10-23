@@ -1,11 +1,13 @@
 <script>
 import AppHeader from '../components/AppHeader.vue';
+import AppFooter from '../components/AppFooter.vue';
 import { ref } from 'vue'
 
 export default {
   name: 'HomePage',
   components: {
     AppHeader,
+    AppFooter,
   },
 }
 
@@ -111,6 +113,6 @@ export default {
         </div>
       </div>
     </div>
-
+    <AppFooter />
   </body>
 </template>
