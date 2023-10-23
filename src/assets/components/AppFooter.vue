@@ -1,10 +1,10 @@
 <template>
   <body>
 
-    <div class="bg-black text-white p-8 container mx-auto grid grid-cols-1 justify-center gap-y-12">
+    <div class="bg-black text-white py-8 container mx-auto grid grid-cols-1 justify-center gap-y-12">
 
       <!-- Navigation links -->
-      <div class="flex space-x-8 justify-center">
+      <div class="flex flex-wrap tracking-tight lg:space-x-8 justify-center gap-5">
         <a href="#" class="hover:text-gray-400">About</a>
         <a href="#" class="hover:text-gray-400">Blog</a>
         <a href="#" class="hover:text-gray-400">Jobs</a>
