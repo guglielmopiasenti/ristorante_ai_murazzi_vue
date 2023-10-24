@@ -53,10 +53,21 @@
             </PopoverPanel>
           </transition>
         </Popover>
+        <!-- routes -->
+        <RouterLink class="text-sm font-semibold leading-6 text-white" :to="{ name: 'restaurant' }">
+          Il Ristorante
+        </RouterLink>
 
-        <a href="#" class="text-sm font-semibold leading-6 text-white">Il Ristorante</a>
-        <a href="#" class="text-sm font-semibold leading-6 text-white">Prenota</a>
-        <a href="#" class="text-sm font-semibold leading-6 text-white">Su di noi</a>
+        <a target="_blank" id="primary_cta" class="text-sm font-semibold leading-6 text-white" tabindex="0"
+          data-tracking-element-type="12" data-field="primary-cta"
+          href="https://booking-widget.quandoo.com/iframe.html?agentId=2&amp;merchantId=35091&amp;origin=https%3A%2F%2Fadmin.quandoo.com&amp;path=https%3A%2F%2Fbooking-widget.quandoo.com%2F"
+          jslog="// LINT.IfChange(PostCTAType)56036; track:impression,click" data-enable-ga="true"
+          data-ga-prefix="primary"><span id="primary_cta_6">Prenota un tavolo</span></a>
+
+
+        <RouterLink class="text-sm font-semibold leading-6 text-white" :to="{ name: 'about-us' }">
+          Su di noi
+        </RouterLink>
       </PopoverGroup>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <a href="#" class="text-sm font-semibold leading-6 text-gray-500">Log in <span
@@ -113,6 +124,7 @@
 </template>
 
 <script setup>
+import { RouterLink } from 'vue-router';
 import { ref } from 'vue'
 import {
   Dialog,
