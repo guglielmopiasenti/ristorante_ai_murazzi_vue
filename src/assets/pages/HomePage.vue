@@ -9,11 +9,16 @@ export default {
     AppHeader,
     AppFooter,
   },
+  methods: {
+    callNumber() {
+      window.location.href = 'tel:+39-041-302-0209';
+    },
+  },
 }
 
 </script>
 <template>
-  <body class="antialiased">
+  <body class="antialiased overflow-x-hidden">
 
     <div class="max-h-screen bg-[url('/public/img/Ristorante_ai_Murazzi.png')] bg-cover selection:text-white">
       <div class="relative">
@@ -32,7 +37,8 @@ export default {
               <p class="mt-6 text-2xl leading-8 text-white">Scopri il Sapore del Mare: Immergiti nell'Esclusività della
                 Nostra Cucina a Base di Pesce!</p>
               <div class="mt-10 flex items-center justify-center gap-x-6">
-                <a href="{{ route('login') }}"
+                <a href="https://booking-widget.quandoo.com/iframe.html?agentId=2&amp;merchantId=35091&amp;origin=https%3A%2F%2Fadmin.quandoo.com&amp;path=https%3A%2F%2Fbooking-widget.quandoo.com%2F"
+                  jslog="// LINT.IfChange(PostCTAType)56036; track:impression,click" data-enable-ga="true"
                   class="rounded-full bg-gradient-to-r from-[#3A261E] via-[#734E3B] to-[#D8B58C] px-3.5 py-2.5 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Prenota
                   un posto ora!</a>
               </div>
@@ -43,21 +49,24 @@ export default {
       </div>
     </div>
     <div class="bg-black">
-      <div class="mx-auto py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl py-24 sm:py-32">
         <div
-          class="relative isolate overflow-hidden bg-black px-6 pt-16 shadow-2xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+          class="relative isolate bg-black px-6 pt-16 shadow-2xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
 
-          <svg viewBox="0 0 1024 1024"
-            class="absolute left-1/2 top-20 -z-10 h-[64rem] w-[64rem] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0"
+          <div
+            class="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu"
             aria-hidden="true">
-            <circle cx="512" cy="512" r="512" fill="url(#759c1415-0410-454c-8f7c-9a820de03641)" fill-opacity="0.7" />
-            <defs>
-              <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
-                <stop stop-color="#734E3B" />
-                <stop offset="1" stop-color="#D8B58C" />
-              </radialGradient>
-            </defs>
-          </svg>
+            <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#3A261E] to-[#D8B58C] opacity-20"
+              style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+            </div>
+          </div>
+          <div class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
+            aria-hidden="true">
+            <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#3A261E] to-[#D8B58C] opacity-20"
+              style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+            </div>
+          </div>
+
           <div class="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
             <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Scopri il nostro Menù.<br />Puoi dargli
               un'occhiata da qui.</h2>
@@ -71,35 +80,80 @@ export default {
                   aria-hidden="true">→</span></a>
             </div>
           </div>
-          <div class="relative mt-16 h-80 lg:mt-8">
-            <img class="absolute rounded-3xl left-0 -top-8 w-[57rem] max-w-none  bg-white/5 ring-1 ring-white/10"
-              src="public/img/murazzi_16.png" alt="App screenshot" />
+          <div class=" lg:mt-8">
+            <img class="rounded-3xl w-[40rem] max-w-none  bg-white/5 ring-1 ring-white/10" src="public/img/murazzi_16.png"
+              alt="App screenshot" />
           </div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black -from-10% to-transparent to-15% z-20"></div>
+          <!-- <div class="absolute inset-0 bg-gradient-to-t from-black -from-10% to-transparent to-15% z-20"></div> -->
         </div>
       </div>
-      <div class="mx-auto pb-24 sm:pb-32">
-        <div
-          class="relative isolate overflow-hidden bg-black px-6 pt-16 shadow-2xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
-          <svg viewBox="0 0 1024 1024"
-            class="absolute left-1/2 top-40 -z-10 h-[64rem] w-[64rem] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0"
+
+      <!-- Map section -->
+
+      <div class="mx-auto max-w-7xl pb-24 sm:pb-32">
+        <div class="relative isolate px-6 pt-16 shadow-2xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
+
+          <!-- First Shape -->
+          <div class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
             aria-hidden="true">
-            <circle cx="512" cy="512" r="512" fill="url(#759c1415-0410-454c-8f7c-9a820de03641)" fill-opacity="0.7" />
-            <defs>
-              <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
-                <stop stop-color="#734E3B" />
-                <stop offset="1" stop-color="#D8B58C" />
-              </radialGradient>
-            </defs>
-          </svg>
-          <iframe class="lg:mt-10 rounded-md z-40"
+            <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#734E3B] to-[#D8B58C] opacity-20"
+              style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%);">
+            </div>
+          </div>
+
+          <!-- Second Shape -->
+          <div
+            class="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu"
+            aria-hidden="true">
+            <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#734E3B] to-[#D8B58C] opacity-20"
+              style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%);">
+            </div>
+          </div>
+
+
+          <iframe class="rounded-3xl z-40"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2801.836209889679!2d12.352638376160549!3d45.392474738221765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eaf8ef65db7ff%3A0x8986bd5e11f475f5!2sRistorante%20Ai%20Murazzi!5e0!3m2!1sit!2snl!4v1698065472586!5m2!1sit!2snl"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
           <div class="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-right justify-self-end lg:mt-10">
             <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Puoi trovarci qui.<br />Semplice.</h2>
             <p class="mt-6 text-lg leading-8 text-gray-300">Clicca sul pulsante 'indicazioni stradali' e fatti portare
               direttamente dalle mappe.</p>
-            <div class="absolute inset-0 bg-gradient-to-t from-black from-0% to-transparent to-10% z-20"></div>
+            <!-- <div class="absolute inset-0 bg-gradient-to-t from-black from-0% to-transparent to-10% z-20"></div> -->
+          </div>
+        </div>
+      </div>
+      <div class="relative isolate py-24 sm:py-32">
+        <div class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
+          aria-hidden="true">
+          <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#3A261E] to-[#D8B58C] opacity-20"
+            style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+          </div>
+        </div>
+        <div
+          class="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu"
+          aria-hidden="true">
+          <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#3A261E] to-[#D8B58C] opacity-20"
+            style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+          </div>
+        </div>
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto text-center lg:mx-0">
+            <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Vuoi prenotare?</h2>
+            <p class="mt-6 text-lg leading-8 text-gray-300">Chiamaci cliccando il pulsante, oppure copia il numero.</p>
+          </div>
+          <div class="mx-auto mt-10 text-center lg:mx-0 lg:max-w-none">
+            <div class="mt-16 flex justify-center gap-8 sm:mt-20">
+              <div data-field="phone">
+                <a href="tel:+39-041-302-0209"
+                  class="rounded-full bg-gradient-to-r from-[#3A261E] via-[#734E3B] to-[#D8B58C] px-4 py-3 font-semibold text-lg text-white shadow-sm"
+                  @click.prevent="callNumber">
+                  Chiama ora
+                </a>
+              </div>
+              <div class="text-white font-bold">
+                041 302 0209
+              </div>
+            </div>
           </div>
         </div>
       </div>
