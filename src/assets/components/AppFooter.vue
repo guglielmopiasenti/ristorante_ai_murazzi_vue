@@ -3,12 +3,9 @@
 
     <!-- Navigation links -->
     <div class="flex flex-wrap tracking-tight lg:space-x-8 justify-center gap-5">
-      <a href="#" class="hover:text-gray-400">About</a>
-      <a href="#" class="hover:text-gray-400">Blog</a>
-      <a href="#" class="hover:text-gray-400">Jobs</a>
-      <a href="#" class="hover:text-gray-400">Press</a>
-      <a href="#" class="hover:text-gray-400">Accessibility</a>
-      <a href="#" class="hover:text-gray-400">Partners</a>
+      <a href="#" class="hover:text-gray-400">Su di noi</a>
+      <a href="#" class="hover:text-gray-400">Lavoro</a>
+      <a href="#" class="hover:text-gray-400">Il ristorante</a>
     </div>
 
     <!-- Social icons -->
