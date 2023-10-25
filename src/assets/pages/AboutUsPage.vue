@@ -20,10 +20,10 @@
           </div>
         </div>
       </div>
-      <div class="container mx-auto">
+      <div class="container sm:container mx-auto">
 
         <h2 class="text-2xl font-bold tracking-tight text-white sm:text-6xl text-center py-10">Il ristorante</h2>
-        <div class="mx-auto tracking-tight text-white text-center leading-7 pb-16">
+        <div class="mx-auto tracking-tight text-white text-center leading-7 pb-16 px-10">
           Benvenuti al Ristorante Ai Murazzi, il gioiello culinario situato nel cuore affascinante del Lido a Venezia,
           dove
           la tradizione della cucina Veneta si sposa con un'atmosfera unica e inebriante. Nel nostro ristorante,
@@ -190,8 +190,22 @@
           </div>
         </div>
 
-      </div>
 
+        <!-- work with us section -->
+        <div class="bg-black h-full w-full bg-cover pb-32">
+          <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto lg:mx-0 text-center py-20">
+              <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Vuoi lavorare con noi?</h2>
+              <p class="mt-6 text-lg leading-8 text-white max-w-2xl mx-auto">Puoi candidarti direttamente tramite il
+                nostro form.</p>
+            </div>
+            <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none text-center">
+              <a href="#"
+                class="transition-colors rounded-full bg-gradient-to-r from-[#3A261E] via-[#734E3B] to-[#D8B58C] px-4 py-3 font-semibold text-lg text-white shadow-sm hover:from-[#D8B58C] hover:via-[#734E3B] hover:to-[#3A261E] duration-300">Candidati</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <AppFooter />
   </body>
