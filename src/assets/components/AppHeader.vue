@@ -17,21 +17,24 @@
       <PopoverGroup class="hidden lg:flex lg:gap-x-12">
 
         <!-- routes -->
-        <RouterLink class="text-sm font-semibold leading-6 text-white" :to="{ name: 'menu' }">
+        <RouterLink class="text-md font-bold leading-6 text-white" :to="{ name: 'home' }">
+          Home
+        </RouterLink>
+        <RouterLink class="text-md font-bold leading-6 text-white" :to="{ name: 'menu' }">
           Menù
         </RouterLink>
-        <RouterLink class="text-sm font-semibold leading-6 text-white" :to="{ name: 'restaurant' }">
+        <RouterLink class="text-md font-bold leading-6 text-white" :to="{ name: 'restaurant' }">
           Il Ristorante
         </RouterLink>
 
-        <a target="_blank" id="primary_cta" class="text-sm font-semibold leading-6 text-white" tabindex="0"
+        <a target="_blank" id="primary_cta" class="text-md font-bold leading-6 text-white" tabindex="0"
           data-tracking-element-type="12" data-field="primary-cta"
           href="https://booking-widget.quandoo.com/iframe.html?agentId=2&amp;merchantId=35091&amp;origin=https%3A%2F%2Fadmin.quandoo.com&amp;path=https%3A%2F%2Fbooking-widget.quandoo.com%2F"
           jslog="// LINT.IfChange(PostCTAType)56036; track:impression,click" data-enable-ga="true"
           data-ga-prefix="primary"><span id="primary_cta_6">Prenota un tavolo</span></a>
 
 
-        <RouterLink class="text-sm font-semibold leading-6 text-white" :to="{ name: 'about-us' }">
+        <RouterLink class="text-md font-bold leading-6 text-white" :to="{ name: 'about-us' }">
           Su di noi
         </RouterLink>
       </PopoverGroup>
