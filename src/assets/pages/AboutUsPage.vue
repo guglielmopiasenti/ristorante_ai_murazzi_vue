@@ -3,7 +3,7 @@
     <div class="relative">
       <AppHeader />
       <div class="relative pb-10">
-        <div class="bg-[url('/public/img/murazzi_14.png')] h-full w-full bg-cover py-32">
+        <div class="bg-[url('/public/img/murazzi_14.png')] h-full w-full bg-center bg-cover py-32">
           <div class="absolute inset-0 bg-black opacity-60 z-0"></div>
 
           <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -13,9 +13,11 @@
                 ineguagliabile ci motiva quotidianamente a dare il massimo.</p>
             </div>
             <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none text-center">
-              <a href="#"
-                class="transition-colors rounded-full bg-gradient-to-r from-[#3A261E] via-[#734E3B] to-[#D8B58C] px-4 py-3 font-semibold text-lg text-white shadow-sm hover:from-[#D8B58C] hover:via-[#734E3B] hover:to-[#3A261E] duration-300">Galleria
-                Foto</a>
+              <RouterLink
+                class="rounded-full transition-colors ease-in-out delay-150 bg-[#3A261E] hover:bg-[#734E3B] px-4 py-3 font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 duration-500"
+                :to="{ name: 'restaurant' }">
+                Galleria Foto
+              </RouterLink>
             </div>
           </div>
         </div>
@@ -201,7 +203,7 @@
             </div>
             <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none text-center">
               <a href="#"
-                class="transition-colors rounded-full bg-gradient-to-r from-[#3A261E] via-[#734E3B] to-[#D8B58C] px-4 py-3 font-semibold text-lg text-white shadow-sm hover:from-[#D8B58C] hover:via-[#734E3B] hover:to-[#3A261E] duration-300">Candidati</a>
+                class="transition ease-in-out delay-150 rounded-full bg-gradient-to-r from-[#3A261E] via-[#734E3B] to-[#D8B58C] px-4 py-3 font-semibold text-lg text-white shadow-sm hover:bg-gradient-to-l hover:from-[#3A261E] hover:via-[#734E3B] hover:to-[#D8B58C] duration-300">Candidati</a>
             </div>
           </div>
         </div>
