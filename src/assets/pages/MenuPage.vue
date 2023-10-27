@@ -1,7 +1,7 @@
 <template>
   <body class="antialiased overflow-x-hidden">
     <div
-      class="max-h-screen bg-[url('/public/img/Ristorante_ai_Murazzi.png')] bg-[center_right_35rem] sm:bg-center bg-cover selection:text-white">
+      class="max-h-screen bg-[url('/public/img/Ristorante_ai_Murazzi.png')] bg-[center_right_35rem] sm:bg-[center_right_55rem] lg:bg-center bg-cover selection:text-white">
       <div class="relative">
         <div class="absolute inset-0 bg-gradient-to-t from-black from-0% to-transparent to-35%"></div>
         <!-- Background Overlay -->
@@ -48,7 +48,7 @@
           <h1 class="text-4xl font-bold tracking-tight text-center text-white py-6">Antipasti</h1>
           <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
 
-            <div v-for="dish in dishes" :key="dish.id" class="group relative">
+            <div v-for="dish in dishes" :key="dish.id" class="group relative" v-show="dish.category.name == 'Antipasti'">
               <div v-if="dish.category.name == 'Antipasti'">
 
                 <div
@@ -61,7 +61,7 @@
                     <h3 class="text-sm text-gray-100">{{ dish.name }}</h3>
                     <p class="mt-1 text-sm text-gray-300">{{ dish.ingredients }}</p>
                   </div>
-                  <p class="text-sm font-medium text-white">{{ dish.price }} €</p>
+                  <p class="text-sm font-medium text-white">€{{ dish.price }}</p>
                 </div>
               </div>
             </div>
@@ -69,7 +69,7 @@
 
           <h1 class="text-4xl font-bold tracking-tight text-center text-white py-6">Primi</h1>
           <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            <div v-for="dish in dishes" :key="dish.id" class="group relative">
+            <div v-for="dish in dishes" :key="dish.id" class="group relative" v-show="dish.category.name == 'Primi'">
               <div v-if="dish.category.name == 'Primi'">
 
                 <div
@@ -82,7 +82,7 @@
                     <h3 class="text-sm text-gray-100">{{ dish.name }}</h3>
                     <p class="mt-1 text-sm text-gray-300">{{ dish.ingredients }}</p>
                   </div>
-                  <p class="text-sm font-medium text-gray-900">{{ dish.price }} €</p>
+                  <p class="text-sm font-medium text-white">€{{ dish.price }}</p>
                 </div>
               </div>
             </div>
@@ -90,7 +90,7 @@
 
           <h1 class="text-4xl font-bold tracking-tight text-center text-white py-6">Secondi</h1>
           <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            <div v-for="dish in dishes" :key="dish.id" class="group relative">
+            <div v-for="dish in dishes" :key="dish.id" class="group relative" v-show="dish.category.name == 'Secondi'">
               <div v-if="dish.category.name == 'Secondi'">
 
                 <div
@@ -103,7 +103,7 @@
                     <h3 class="text-sm text-gray-100">{{ dish.name }}</h3>
                     <p class="mt-1 text-sm text-gray-300">{{ dish.ingredients }}</p>
                   </div>
-                  <p class="text-sm font-medium text-gray-900">{{ dish.price }} €</p>
+                  <p class="text-sm font-medium text-white">€{{ dish.price }}</p>
                 </div>
               </div>
             </div>
@@ -111,7 +111,7 @@
 
           <h1 class="text-4xl font-bold tracking-tight text-center text-white py-6">Dolci</h1>
           <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            <div v-for="dish in dishes" :key="dish.id" class="group relative">
+            <div v-for="dish in dishes" :key="dish.id" class="group relative" v-show="dish.category.name == 'Dolci'">
               <div v-if="dish.category.name == 'Dolci'">
 
                 <div
@@ -124,7 +124,7 @@
                     <h3 class="text-sm text-gray-100">{{ dish.name }}</h3>
                     <p class="mt-1 text-sm text-gray-300">{{ dish.ingredients }}</p>
                   </div>
-                  <p class="text-sm font-medium text-gray-900">{{ dish.price }} €</p>
+                  <p class="text-sm font-medium text-white">€{{ dish.price }}</p>
                 </div>
               </div>
             </div>
@@ -132,7 +132,7 @@
 
           <h1 class="text-4xl font-bold tracking-tight text-center text-white py-6">Bevande</h1>
           <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            <div v-for="dish in dishes" :key="dish.id" class="group relative">
+            <div v-for="dish in dishes" :key="dish.id" class="group relative" v-show="dish.category.name == 'Bevande'">
               <div v-if="dish.category.name == 'Bevande'">
 
                 <div
@@ -145,7 +145,7 @@
                     <h3 class="text-sm text-gray-100">{{ dish.name }}</h3>
                     <p class="mt-1 text-sm text-gray-300">{{ dish.ingredients }}</p>
                   </div>
-                  <p class="text-sm font-medium text-gray-900">{{ dish.price }} €</p>
+                  <p class="text-sm font-medium text-white">€{{ dish.price }}</p>
                 </div>
               </div>
             </div>
@@ -153,7 +153,8 @@
 
           <h1 class="text-4xl font-bold tracking-tight text-center text-white py-6">Vini bianchi</h1>
           <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            <div v-for="dish in dishes" :key="dish.id" class="group relative">
+            <div v-for="dish in dishes" :key="dish.id" class="group relative"
+              v-show="dish.category.name == 'Vini bianchi'">
               <div v-if="dish.category.name == 'Vini bianchi'">
                 <div
                   class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
@@ -165,7 +166,7 @@
                     <h3 class="text-sm text-gray-100">{{ dish.name }}</h3>
                     <p class="mt-1 text-sm text-gray-300">{{ dish.ingredients }}</p>
                   </div>
-                  <p class="text-sm font-medium text-gray-900">{{ dish.price }} €</p>
+                  <p class="text-sm font-medium text-white">€{{ dish.price }}</p>
                 </div>
               </div>
             </div>
@@ -173,7 +174,7 @@
 
           <h1 class="text-4xl font-bold tracking-tight text-center text-white py-6">Vini rossi</h1>
           <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            <div v-for="dish in dishes" :key="dish.id" class="group relative">
+            <div v-for="dish in dishes" :key="dish.id" class="group relative" v-show="dish.category.name == 'Vini rossi'">
               <div v-if="dish.category.name == 'Vini rossi'">
 
                 <div
@@ -186,7 +187,7 @@
                     <h3 class="text-sm text-gray-100">{{ dish.name }}</h3>
                     <p class="mt-1 text-sm text-gray-300">{{ dish.ingredients }}</p>
                   </div>
-                  <p class="text-sm font-medium text-gray-900">{{ dish.price }} €</p>
+                  <p class="text-sm font-medium text-white">€{{ dish.price }}</p>
                 </div>
               </div>
             </div>
@@ -197,7 +198,7 @@
           <h1 class="text-4xl font-bold tracking-tight text-center text-white py-6">Birre</h1>
           <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
 
-            <div v-for="dish in dishes" :key="dish.id" class="group relative">
+            <div v-for="dish in dishes" :key="dish.id" class="group relative" v-show="dish.category.name == 'Birre'">
               <div v-if="dish.category.name == 'Birre'">
 
                 <div
@@ -210,7 +211,7 @@
                     <h3 class="text-sm text-gray-100">{{ dish.name }}</h3>
                     <p class="mt-1 text-sm text-gray-300">{{ dish.ingredients }}</p>
                   </div>
-                  <p class="text-sm font-medium text-gray-900">{{ dish.price }} €</p>
+                  <p class="text-sm font-medium text-white">€{{ dish.price }}</p>
                 </div>
               </div>
             </div>
@@ -221,7 +222,7 @@
           <h1 class="text-4xl font-bold tracking-tight text-center text-white py-6">Drink</h1>
           <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
 
-            <div v-for="dish in dishes" :key="dish.id" class="group relative">
+            <div v-for="dish in dishes" :key="dish.id" class="group relative" v-show="dish.category.name == 'Drink'">
               <div v-if="dish.category.name == 'Drink'">
 
                 <div
@@ -234,7 +235,7 @@
                     <h3 class="text-sm text-gray-100">{{ dish.name }}</h3>
                     <p class="mt-1 text-sm text-gray-300">{{ dish.ingredients }}</p>
                   </div>
-                  <p class="text-sm font-medium text-gray-900">{{ dish.price }} €</p>
+                  <p class="text-sm font-medium text-white">€{{ dish.price }}</p>
                 </div>
               </div>
             </div>
@@ -244,7 +245,8 @@
           <h1 class="text-4xl font-bold tracking-tight text-center text-white py-6">Caffetteria</h1>
           <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
 
-            <div v-for="dish in dishes" :key="dish.id" class="group relative">
+            <div v-for="dish in dishes" :key="dish.id" class="group relative"
+              v-show="dish.category.name == 'Caffetteria'">
               <div v-if="dish.category.name == 'Caffetteria'">
 
                 <div
@@ -257,7 +259,7 @@
                     <h3 class="text-sm text-gray-100">{{ dish.name }}</h3>
                     <p class="mt-1 text-sm text-gray-300">{{ dish.ingredients }}</p>
                   </div>
-                  <p class="text-sm font-medium text-gray-900">{{ dish.price }} €</p>
+                  <p class="text-sm font-medium text-white">€{{ dish.price }}</p>
                 </div>
               </div>
             </div>
