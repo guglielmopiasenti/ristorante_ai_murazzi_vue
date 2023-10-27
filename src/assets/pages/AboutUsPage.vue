@@ -202,8 +202,11 @@
                 nostro form.</p>
             </div>
             <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none text-center">
-              <a href="#"
-                class="transition ease-in-out delay-150 rounded-full bg-gradient-to-r from-[#3A261E] via-[#734E3B] to-[#D8B58C] px-4 py-3 font-semibold text-lg text-white shadow-sm hover:bg-gradient-to-l hover:from-[#3A261E] hover:via-[#734E3B] hover:to-[#D8B58C] duration-300">Candidati</a>
+              <RouterLink
+                class="text-lg rounded-full bg-gradient-to-r from-[#3A261E] via-[#734E3B] to-[#D8B58C] px-3.5 py-2.5 font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                :to="{ name: 'work' }">
+                Canditati
+              </RouterLink>
             </div>
           </div>
         </div>
