@@ -51,7 +51,7 @@
 
           <div class="grid grid-cols-2 py-5">
             <button @click="prev" type="button"
-              class="flex sm:absolute sm:top-0 sm:-left-20 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none">
+              class="flex lg:absolute lg:top-0 lg:-left-20 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none">
               <span
                 class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/50 group-hover:bg-white/70 group-focus:ring-4 group-focus:ring-white/80 group-focus:outline-none">
                 <svg class="w-5 h-5 text-white sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -63,7 +63,7 @@
             </button>
 
             <button @click="next" type="button"
-              class="flex sm:absolute sm:top-0 sm:-right-20 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none">
+              class="flex lg:absolute lg:top-0 lg:-right-20 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none">
               <span
                 class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/50 group-hover:bg-white/70 group-focus:ring-4 group-focus:ring-white/80 group-focus:outline-none">
                 <svg class="w-5 h-5 text-white sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
