@@ -1,7 +1,7 @@
 <script>
 import AppHeader from '../components/AppHeader.vue';
 import AppFooter from '../components/AppFooter.vue';
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue';
 
 export default {
   name: 'HomePage',
@@ -9,14 +9,55 @@ export default {
     AppHeader,
     AppFooter,
   },
+  setup() {
+    const leftElement = ref(null);
+    const rightElement = ref(null);
+
+    const isInViewport = (element) => {
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    };
+
+    const handleScroll = () => {
+      if (isInViewport(leftElement.value)) {
+        leftElement.value.classList.remove('visibility-hidden');
+        leftElement.value.classList.add('animate__fadeInLeft');
+      }
+
+      if (isInViewport(rightElement.value)) {
+        rightElement.value.classList.remove('visibility-hidden');
+        rightElement.value.classList.add('animate__fadeInRight');
+      }
+    };
+
+    onMounted(() => {
+      window.addEventListener('scroll', handleScroll);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('scroll', handleScroll);
+    });
+
+    return {
+      leftElement,
+      rightElement,
+    };
+  },
   methods: {
     callNumber() {
       window.location.href = 'tel:+39-041-302-0209';
     },
   },
 }
-
 </script>
+
+
+
 <template>
   <body class="antialiased overflow-x-hidden">
 
@@ -34,10 +75,15 @@ export default {
           <div class="flex justify-center w-full py-32 sm:py-48 lg:py-56">
 
             <div class="text-center">
-              <div class="lg:text-9xl font-edmund text-white sm:text-6xl">Ristorante ai Murazzi</div>
-              <p class="mt-6 text-2xl leading-8 text-white py-7">Scopri il Sapore del Mare: Immergiti nell'Esclusività
-                della
-                Nostra Cucina a Base di Pesce!</p>
+              <div class="animate__animated animate__fadeInDown">
+                <div class="lg:text-9xl font-edmund text-white sm:text-6xl">Ristorante ai Murazzi</div>
+              </div>
+              <div class="animate__animated animate__fadeInDown">
+                <p class="mt-6 text-2xl leading-8 text-white py-7">Scopri il Sapore del Mare: Immergiti nell'Esclusività
+                  della
+                  Nostra Cucina a Base di Pesce!</p>
+
+              </div>
               <div class="mt-10 flex items-center justify-center gap-x-6">
                 <a href="https://booking-widget.quandoo.com/iframe.html?agentId=2&amp;merchantId=35091&amp;origin=https%3A%2F%2Fadmin.quandoo.com&amp;path=https%3A%2F%2Fbooking-widget.quandoo.com%2F"
                   jslog="// LINT.IfChange(PostCTAType)56036; track:impression,click" data-enable-ga="true"
@@ -70,11 +116,15 @@ export default {
           </div>
 
           <div class="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-            <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Scopri il nostro Menù.<br />Puoi dargli
-              un'occhiata da qui.</h2>
-            <p class="mt-6 text-lg leading-8 text-gray-300 md:py-6">Immergiti in un viaggio gastronomico dove ogni piatto
-              racconta
-              una storia unica.</p>
+            <div ref="leftElement" class="animate__animated visibility-hidden">
+
+              <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Scopri il nostro Menù.<br />Puoi dargli
+                un'occhiata da qui.</h2>
+              <p class="mt-6 text-lg leading-8 text-gray-300 md:py-6">Immergiti in un viaggio gastronomico dove ogni
+                piatto
+                racconta
+                una storia unica.</p>
+            </div>
             <div
               class="mt-10 flex flex-col sm:flex-row py-5 pb-10 sm:pb-0 sm:py-0 items-center justify-center gap-x-6 lg:justify-start">
 
@@ -88,8 +138,11 @@ export default {
               </RouterLink>
             </div>
           </div>
-          <div class="md:pt-10 md:mt-16 lg:mt-20 flex justify-center">
-            <img class="rounded-3xl w3/4 sm:w-[40rem]" src="public/img/murazzi_16.png" alt="App screenshot" />
+          <div ref="rightElement" class="animate__animated visibility-hidden">
+
+            <div class="md:pt-10 md:mt-16 lg:mt-20 flex justify-center">
+              <img class="rounded-3xl w3/4 sm:w-[40rem]" src="public/img/murazzi_16.png" alt="App screenshot" />
+            </div>
           </div>
         </div>
       </div>
@@ -200,3 +253,12 @@ export default {
     <AppFooter />
   </body>
 </template>
+
+
+
+
+<style>
+.visibility-hidden {
+  visibility: hidden;
+}
+</style>
