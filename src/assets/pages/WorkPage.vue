@@ -9,12 +9,12 @@
         style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" />
     </div>
 
-    <div @submit.prevent="submitForm" class="mx-auto mt-16 max-w-xl sm:mt-20">
+    <div class="mx-auto mt-16 max-w-xl sm:mt-20">
       <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Auto Candidatura</h2>
       <p class="mt-2 text-lg leading-8 text-gray-400">Compila il form e applica per una posizione lavorativa. Valuteremo
         il tuo cv e ti ricontatteremo.</p>
     </div>
-    <form action="#" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
+    <form @submit.prevent="submitForm" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
       <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
         <div>
           <label for="first-name" class="block text-sm font-semibold leading-6 text-white">Nome</label>
@@ -33,7 +33,7 @@
         <div class="sm:col-span-2">
           <label for="cv" class="block text-sm font-semibold leading-6 text-white">Curriculum</label>
           <div class="mt-2.5">
-            <input type="file" name="company" id="company" autocomplete="organization"
+            <input type="file" name="cv" id="cv" autocomplete="organization"
               class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-400 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
           </div>
         </div>
@@ -46,16 +46,16 @@
         </div>
         <div class="sm:col-span-2">
           <label for="phone-number" class="block text-sm font-semibold leading-6 text-white">Numero Telefonico</label>
-          <div class="relative mt-2.5">
+          <div class="mt-2.5">
             <input type="tel" name="phone-number" id="phone-number" autocomplete="tel"
-              class="block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+              class="block w-full rounded-md border-0 px-3.5 py-2  text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
           </div>
         </div>
         <div class="sm:col-span-2">
           <label for="message" class="block text-sm font-semibold leading-6 text-white">Lettera di presentazione</label>
           <div class="mt-2.5">
             <textarea name="message" id="message" rows="4"
-              class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+              class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
           </div>
         </div>
         <SwitchGroup as="div" class="flex gap-x-4 sm:col-span-2">
@@ -105,20 +105,32 @@ const submitForm = async () => {
   const formData = new FormData();
   formData.append('first-name', document.getElementById('first-name').value);
   formData.append('last-name', document.getElementById('last-name').value);
-  formData.append('cv', document.getElementById('company').files[0]);
+  formData.append('cv', document.getElementById('cv').files[0]);
   formData.append('email', document.getElementById('email').value);
   formData.append('phone-number', document.getElementById('phone-number').value);
   formData.append('message', document.getElementById('message').value);
 
+  // Retrieving CSRF token from meta tag
+  const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+  axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken;
+
+
   try {
-    const response = await axios.post('/your-laravel-endpoint', formData, {
+    const response = await axios.post('http://localhost:8000/api/contact-message', formData, {
       headers: {
-        'Content-Type': 'multipart/form-data'
+        'Content-Type': 'multipart/form-data',
+        'X-CSRF-TOKEN': csrfToken // Including CSRF token in the request header
       }
     });
-    console.log(response.data); // handle your response here
+    if (response.status === 200) {
+      console.log(response.data);
+      alert('Il tuo messaggio è stato inviato con successo!'); // Added a success message
+    } else {
+      alert('Si è verificato un errore durante l\'invio del tuo messaggio. Riprova più tardi.'); // Added a generic error message
+    }
   } catch (error) {
-    console.error(error); // handle your error here
+    console.error(error);
+    alert('Si è verificato un errore durante l\'invio del tuo messaggio. Assicurati che tutti i campi siano compilati correttamente e riprova.'); // Improved the error message
   }
 }
 </script>
