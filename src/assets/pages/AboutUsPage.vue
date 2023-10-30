@@ -8,9 +8,13 @@
 
           <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto lg:mx-0 text-center py-20">
-              <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Attivi dal 1998</h2>
-              <p class="mt-6 text-lg leading-8 text-white max-w-2xl mx-auto">La nostra dedizione a offrire un servizio
-                ineguagliabile ci motiva quotidianamente a dare il massimo.</p>
+              <div class="animate__animated animate__fadeInDown">
+                <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Attivi dal 1998</h2>
+              </div>
+              <div class="animate__animated animate__fadeInDown">
+                <p class="mt-6 text-lg leading-8 text-white max-w-2xl mx-auto">La nostra dedizione a offrire un servizio
+                  ineguagliabile ci motiva quotidianamente a dare il massimo.</p>
+              </div>
             </div>
             <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none text-center">
               <RouterLink

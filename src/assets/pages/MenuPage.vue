@@ -14,9 +14,13 @@
           <div class="flex justify-center w-full py-32 sm:py-48 lg:py-56">
 
             <div class="text-center">
-              <div class="lg:text-9xl font-edmund text-white sm:text-6xl">Menù</div>
-              <p class="mt-6 text-2xl leading-8 text-white">Questo è il nostro menù online. Ogni piatto è un capolavoro.
-                Scopri le creazioni uniche che abbiamo preparato per te.</p>
+              <div class="animate__animated animate__fadeInDown">
+                <div class="lg:text-9xl font-edmund text-white sm:text-6xl">Menù</div>
+              </div>
+              <div class="animate__animated animate__fadeInDown">
+                <p class="mt-6 text-2xl leading-8 text-white">Questo è il nostro menù online. Ogni piatto è un capolavoro.
+                  Scopri le creazioni uniche che abbiamo preparato per te.</p>
+              </div>
               <div class="mt-10 flex items-center justify-center gap-x-6">
                 <a href="https://booking-widget.quandoo.com/iframe.html?agentId=2&amp;merchantId=35091&amp;origin=https%3A%2F%2Fadmin.quandoo.com&amp;path=https%3A%2F%2Fbooking-widget.quandoo.com%2F"
                   jslog="// LINT.IfChange(PostCTAType)56036; track:impression,click" data-enable-ga="true"
