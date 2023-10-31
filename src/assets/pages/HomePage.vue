@@ -240,12 +240,3 @@ export default {
     <AppFooter />
   </body>
 </template>
-
-
-
-
-<style>
-.visibility-hidden {
-  visibility: hidden;
-}
-</style>

@@ -50,16 +50,19 @@
         <div class="flex items-center justify-between">
           <a href="#" class="-m-1.5 p-1.5">
             <span class="sr-only">Your Company</span>
-            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+            <img class="h-12 w-auto rounded-full" src="public/img/ai_murazzi.png" alt="" />
           </a>
           <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
             <span class="sr-only">Close menu</span>
             <XMarkIcon class="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <div class="mt-6 flow-root">
+        <div class="mt-20 flow-root">
           <div class="-my-6 divide-y divide-gray-500/10">
             <div class="space-y-2 py-10 grid grid-cols-1 gap-y-7">
+              <RouterLink class="text-2xl font-bold leading-6 text-white" :to="{ name: 'home' }">
+                Home
+              </RouterLink>
               <RouterLink class="text-2xl font-bold leading-6 text-white" :to="{ name: 'menu' }">
                 Menù
               </RouterLink>
