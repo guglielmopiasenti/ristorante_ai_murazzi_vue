@@ -65,7 +65,7 @@ export default {
       </div>
     </div>
     <div class="bg-black">
-      <div class="mx-auto max-w-7xl pb-20 sm:py-32">
+      <div class="mx-auto max-w-7xl pb-20 sm:pt-32 lg:pb-10">
         <div
           class="relative isolate bg-black px-6 pt-16 shadow-2xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0 lg:pb-32">
 
