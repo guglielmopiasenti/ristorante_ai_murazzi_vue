@@ -9,7 +9,7 @@
           <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto lg:mx-0 text-center py-20">
               <div class="animate__animated animate__fadeInDown">
-                <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Attivi dal 1998</h2>
+                <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl font-edmund">Attivi dal 1998</h2>
               </div>
               <div class="animate__animated animate__fadeInDown">
                 <p class="mt-6 text-lg leading-8 text-white max-w-2xl mx-auto">La nostra dedizione a offrire un servizio
@@ -18,7 +18,7 @@
             </div>
             <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none text-center">
               <RouterLink
-                class="rounded-full transition-colors ease-in-out delay-150 bg-[#3A261E] hover:bg-[#734E3B] px-4 py-3 font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 duration-500"
+                class="text-lg rounded-full bg-gradient-to-r from-[#3A261E] via-[#734E3B] to-[#D8B58C] px-3.5 py-2.5 font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
                 :to="{ name: 'restaurant' }">
                 Galleria Foto
               </RouterLink>
@@ -83,7 +83,7 @@
 
         <div class="text-white py-24 sm:py-32">
           <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <h2 class="text-center text-4xl font-bold leading-8 text-white">Ci trovi anche su</h2>
+            <h2 class="text-center text-4xl font-bold leading-8 text-white py-14">Ci trovi anche su</h2>
             <div
               class="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
               <div class="col-span-2 max-h-12 w-full object-contain lg:col-span-1">
@@ -95,7 +95,7 @@
                 </svg>
               </div>
               <div class="col-span-2 max-h-12 w-full object-contain lg:col-span-1">
-                <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 426.4 82.5">
+                <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 426.4 98.5">
                   <title>facebook</title>
                   <g id="_Group_">
                     <path id="_Path_" class="st0"
@@ -118,7 +118,7 @@
                 </svg>
               </div>
               <div class="col-span-2 max-h-12 w-full object-contain lg:col-span-1">
-                <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 163.6 51">
+                <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 7 163.6 51">
 
 
                   <path class="st1"
@@ -151,7 +151,7 @@
               </div>
               <div class="col-span-2 max-h-12 w-full object-contain lg:col-span-1">
                 <svg version="1.1" id="layer" xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-154 150 652 652"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-154 180 652 652"
                   style="enable-background:new -153 -46 652 652;">
 
                   <path class="st8" d="M-67,317.6c-3.9-5-8.4-13.3-10.2-19c-14.7,0-32.6-11.9-32.6-35.4c0-19.8,11.7-35.2,32.6-35.2

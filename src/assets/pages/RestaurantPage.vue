@@ -9,7 +9,8 @@
           <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
             <div class="mx-auto lg:mx-0 text-center py-20">
               <div class="animate__animated animate__fadeInDown">
-                <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Questa è la nostra location</h2>
+                <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl font-edmund">Questa è la nostra
+                  location</h2>
               </div>
               <div class="animate__animated animate__fadeInDown">
                 <p class="mt-6 text-lg leading-8 text-white max-w-2xl mx-auto">Scopri la magia di mangiare in un
