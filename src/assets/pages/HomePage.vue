@@ -2,6 +2,8 @@
 import AppHeader from '../components/AppHeader.vue';
 import AppFooter from '../components/AppFooter.vue';
 import { ref, onMounted, onUnmounted } from 'vue';
+import AnimateOnScroll from 'primevue/animateonscroll';
+
 
 export default {
   name: 'HomePage',
@@ -9,45 +11,11 @@ export default {
     AppHeader,
     AppFooter,
   },
-  setup() {
-    const leftElement = ref(null);
-    const rightElement = ref(null);
 
-    const isInViewport = (element) => {
-      const rect = element.getBoundingClientRect();
-      return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
-    };
-
-    const handleScroll = () => {
-      if (isInViewport(leftElement.value)) {
-        leftElement.value.classList.remove('visibility-hidden');
-        leftElement.value.classList.add('animate__fadeInLeft');
-      }
-
-      if (isInViewport(rightElement.value)) {
-        rightElement.value.classList.remove('visibility-hidden');
-        rightElement.value.classList.add('animate__fadeInRight');
-      }
-    };
-
-    onMounted(() => {
-      window.addEventListener('scroll', handleScroll);
-    });
-
-    onUnmounted(() => {
-      window.removeEventListener('scroll', handleScroll);
-    });
-
-    return {
-      leftElement,
-      rightElement,
-    };
+  directives: {
+    'animateonscroll': AnimateOnScroll
   },
+
   methods: {
     callNumber() {
       window.location.href = 'tel:+39-041-302-0209';
@@ -116,7 +84,7 @@ export default {
           </div>
 
           <div class="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
-            <div ref="leftElement" class="animate__animated visibility-hidden">
+            <div v-animateonscroll="{ enterClass: 'animate__fadeInLeft', }" class="animate__animated">
 
               <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Scopri il nostro Menù.<br />Puoi dargli
                 un'occhiata da qui.</h2>
@@ -138,7 +106,7 @@ export default {
               </RouterLink>
             </div>
           </div>
-          <div ref="rightElement" class="animate__animated visibility-hidden">
+          <div v-animateonscroll="{ enterClass: 'animate__fadeInRight', }" class="animate__animated">
 
             <div class="md:pt-10 md:mt-16 lg:mt-20 flex justify-center">
               <img class="rounded-3xl w3/4 sm:w-[40rem]" src="public/img/murazzi_16.png" alt="App screenshot" />
@@ -169,24 +137,35 @@ export default {
             </div>
           </div>
 
-          <div class="lg:hidden mx-auto max-w-md text-center pb-10">
-            <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Puoi trovarci qui.<br />Semplice.</h2>
-            <p class="mt-6 text-lg leading-8 text-gray-300 md:py-7">Clicca sul pulsante 'indicazioni stradali' e fatti
-              portare
-              direttamente dalle mappe.</p>
+          <div v-animateonscroll="{ enterClass: 'animate__fadeInDown', }"
+            class="animate__animated lg:hidden mx-auto max-w-md text-center">
+            <div class="lg:hidden mx-auto max-w-md text-center pb-10">
+              <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Puoi trovarci qui.<br />Semplice.</h2>
+              <p class="mt-6 text-lg leading-8 text-gray-300 md:py-7">Clicca sul pulsante 'indicazioni stradali' e fatti
+                portare
+                direttamente dalle mappe.</p>
 
+            </div>
           </div>
           <!-- Google Maps -->
-          <div class="flex justify-center md:pt-10">
-            <iframe class="rounded-3xl z-40 w-[22rem] sm:w-[40rem]"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2801.836209889679!2d12.352638376160549!3d45.392474738221765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eaf8ef65db7ff%3A0x8986bd5e11f475f5!2sRistorante%20Ai%20Murazzi!5e0!3m2!1sit!2snl!4v1698065472586!5m2!1sit!2snl"
-              width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+          <div v-animateonscroll="{ enterClass: 'animate__fadeInLeft', }" class="animate__animated">
+            <div class="flex justify-center md:pt-10">
+              <iframe class="rounded-3xl z-40 w-[22rem] sm:w-[40rem]"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2801.836209889679!2d12.352638376160549!3d45.392474738221765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eaf8ef65db7ff%3A0x8986bd5e11f475f5!2sRistorante%20Ai%20Murazzi!5e0!3m2!1sit!2snl!4v1698065472586!5m2!1sit!2snl"
+                width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
           </div>
-          <div
-            class="hidden lg:inline-block mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-right justify-self-end">
-            <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Puoi trovarci qui.<br />Semplice.</h2>
-            <p class="mt-6 text-lg leading-8 text-gray-300">Clicca sul pulsante 'indicazioni stradali' e fatti portare
-              direttamente dalle mappe.</p>
+
+          <div v-animateonscroll="{ enterClass: 'animate__fadeInRight', }" class="animate__animated">
+
+
+            <div
+              class="hidden lg:inline-block mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-right justify-self-end">
+              <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Puoi trovarci qui.<br />Semplice.</h2>
+              <p class="mt-6 text-lg leading-8 text-gray-300">Clicca sul pulsante 'indicazioni stradali' e fatti portare
+                direttamente dalle mappe.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -205,21 +184,29 @@ export default {
           </div>
         </div>
         <div class="mx-auto max-w-7xl px-6 lg:px-8 md:pb-24">
-          <div class="mx-auto text-center lg:mx-0">
-            <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Vuoi prenotare?</h2>
-            <p class="mt-6 text-lg leading-8 text-gray-300">Chiamaci cliccando il pulsante, oppure copia il numero.</p>
+          <div v-animateonscroll="{ enterClass: 'animate__fadeInDown', }" class="animate__animated">
+
+
+            <div class="mx-auto text-center lg:mx-0">
+              <h2 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Vuoi prenotare?</h2>
+              <p class="mt-6 text-lg leading-8 text-gray-300">Chiamaci cliccando il pulsante, oppure copia il numero.</p>
+            </div>
           </div>
           <div class="mx-auto mt-10 text-center lg:mx-0 lg:max-w-none">
             <div class="mt-16 flex justify-center gap-8 sm:mt-20">
-              <div data-field="phone">
-                <a href="tel:+39-041-302-0209"
-                  class="rounded-full bg-gradient-to-r from-[#3A261E] via-[#734E3B] to-[#D8B58C] px-4 py-3 font-semibold text-lg text-white shadow-sm"
-                  @click.prevent="callNumber">
-                  Chiama ora
-                </a>
+              <div v-animateonscroll="{ enterClass: 'animate__fadeInLeft', }" class="animate__animated">
+                <div data-field="phone">
+                  <a href="tel:+39-041-302-0209"
+                    class="rounded-full bg-gradient-to-r from-[#3A261E] via-[#734E3B] to-[#D8B58C] px-4 py-3 font-semibold text-lg text-white shadow-sm"
+                    @click.prevent="callNumber">
+                    Chiama ora
+                  </a>
+                </div>
               </div>
-              <div class="text-white font-bold">
-                041 302 0209
+              <div v-animateonscroll="{ enterClass: 'animate__fadeInRight', }" class="animate__animated">
+                <div class="text-white font-bold">
+                  041 302 0209
+                </div>
               </div>
             </div>
           </div>
