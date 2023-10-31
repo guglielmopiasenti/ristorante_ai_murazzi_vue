@@ -18,7 +18,8 @@
     <div class="flex space-x-12 mt-4 md:mt-0 justify-center">
       <a href="https://www.facebook.com/RistoranteAiMurazzi/?locale=it_IT" class="text-xl hover:text-gray-400"><i
           class="fab fa-facebook-f"></i></a>
-      <a href="#" class="text-xl hover:text-gray-400"><i class="fab fa-instagram"></i></a>
+      <a href="https://instagram.com/ristorante_ai_murazzi?igshid=MzMyNGUyNmU2YQ==" class="text-xl hover:text-gray-400"><i
+          class="fab fa-instagram"></i></a>
       <a href="#" class="text-xl hover:text-gray-400"><i class="fab fa-twitter"></i></a>
       <a href="#" class="text-xl hover:text-gray-400"><i class="fab fa-youtube"></i></a>
     </div>
