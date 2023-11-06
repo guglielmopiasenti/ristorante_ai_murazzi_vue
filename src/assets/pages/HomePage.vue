@@ -1,31 +1,3 @@
-<script>
-import AppHeader from '../components/AppHeader.vue';
-import AppFooter from '../components/AppFooter.vue';
-import { ref, onMounted, onUnmounted } from 'vue';
-import AnimateOnScroll from 'primevue/animateonscroll';
-
-
-export default {
-  name: 'HomePage',
-  components: {
-    AppHeader,
-    AppFooter,
-  },
-
-  directives: {
-    'animateonscroll': AnimateOnScroll
-  },
-
-  methods: {
-    callNumber() {
-      window.location.href = 'tel:+39-041-302-0209';
-    },
-  },
-}
-</script>
-
-
-
 <template>
   <body class="antialiased overflow-x-hidden">
 
@@ -240,3 +212,30 @@ export default {
     <AppFooter />
   </body>
 </template>
+
+
+<script>
+import AppHeader from '../components/AppHeader.vue';
+import AppFooter from '../components/AppFooter.vue';
+import { ref, onMounted, onUnmounted } from 'vue';
+import AnimateOnScroll from 'primevue/animateonscroll';
+
+
+export default {
+  name: 'HomePage',
+  components: {
+    AppHeader,
+    AppFooter,
+  },
+
+  directives: {
+    'animateonscroll': AnimateOnScroll
+  },
+
+  methods: {
+    callNumber() {
+      window.location.href = 'tel:+39-041-302-0209';
+    },
+  },
+}
+</script>

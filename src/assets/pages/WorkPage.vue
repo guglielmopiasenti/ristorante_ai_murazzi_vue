@@ -119,18 +119,18 @@ const submitForm = async () => {
     const response = await axios.post('http://localhost:8000/api/contact-message', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
-        'X-CSRF-TOKEN': csrfToken // Including CSRF token in the request header
+        'X-CSRF-TOKEN': csrfToken
       }
     });
     if (response.status === 200) {
       console.log(response.data);
-      alert('Il tuo messaggio è stato inviato con successo!'); // Added a success message
+      alert('Il tuo messaggio è stato inviato con successo!');
     } else {
-      alert('Si è verificato un errore durante l\'invio del tuo messaggio. Riprova più tardi.'); // Added a generic error message
+      alert('Si è verificato un errore durante l\'invio del tuo messaggio. Riprova più tardi.');
     }
   } catch (error) {
     console.error(error);
-    alert('Si è verificato un errore durante l\'invio del tuo messaggio. Assicurati che tutti i campi siano compilati correttamente e riprova.'); // Improved the error message
+    alert('Si è verificato un errore durante l\'invio del tuo messaggio. Assicurati che tutti i campi siano compilati correttamente e riprova.');
   }
 }
 </script>
