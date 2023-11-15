@@ -81,7 +81,7 @@
           <div v-animateonscroll="{ enterClass: 'animate__fadeInRight', }" class="animate__animated">
 
             <div class="md:pt-10 md:mt-16 lg:mt-20 flex justify-center">
-              <img class="rounded-3xl w3/4 sm:w-[40rem]" src="public/img/murazzi_16.png" alt="App screenshot" />
+              <img class="rounded-3xl w3/4 sm:w-[40rem]" src="/img/murazzi_16.png" alt="App screenshot" />
             </div>
           </div>
         </div>
