@@ -217,7 +217,6 @@
 <script>
 import AppHeader from '../components/AppHeader.vue';
 import AppFooter from '../components/AppFooter.vue';
-import { ref, onMounted, onUnmounted } from 'vue';
 import AnimateOnScroll from 'primevue/animateonscroll';
 
 
